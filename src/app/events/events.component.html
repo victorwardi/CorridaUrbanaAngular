@@ -1,0 +1,54 @@
+<div class="row">
+
+  <div class="col">
+    <input type="text" placeholder="search..." #inputSearch>
+    <button (click)="filterEvents()">Search</button>
+  </div>
+
+  <div class="col">
+    <div *ngIf="!loaded" class="loader"></div>
+  </div>
+
+</div>
+
+
+<div *ngIf="loaded" class="row">
+
+  <div class="col">
+
+    <ul class="event-list">
+
+      <li *ngFor="let runningEvent of eventList" class="row align-bottom">
+
+        <time datetime="2014-07-31 1600" class="col-md-2">
+            <span class="month ">{{runningEvent.date.monthComplete}} {{runningEvent.date.year}}</span>
+            <span class="day">{{runningEvent.date.day}}</span>
+
+          <!--<span class="year">{{runningEvent.date.year}}</span>-->
+          <!--<span class="time">4:00 PM</span>-->
+        </time><!-- end time -->
+
+        <div class="info col-md-9">
+          <h3 class="title">{{runningEvent.title}}</h3>
+          <p class="desc"><span class="fa fa-map-marked-alt"></span> {{runningEvent.address.place}}</p>
+          <p><span class="fa fa-route"></span> {{runningEvent.distances}} </p>
+          <p><span class="fas fa-money-bill-wave"></span> {{runningEvent.price}}</p>
+        </div> <!-- end info -->
+
+        <div class="social col-md-1">
+          <ul class="col">
+            <li class="facebook"><a href="#facebook"><span class="fab fa-facebook"></span></a></li>
+            <li class="twitter"><a href="#twitter"><span class="fab fa-twitter"></span></a></li>
+            <li class="google-plus"><a href="#google-plus"><span class="fab fa-google-plus"></span></a>
+            </li>
+          </ul>
+        </div><!-- end social -->
+
+      </li><!-- end running-event-->
+
+    </ul><!-- end event list -->
+
+  </div>
+
+</div>
+

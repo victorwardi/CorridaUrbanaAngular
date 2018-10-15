@@ -1,0 +1,103 @@
+.curb-ad-header {
+  margin: 10px;
+}
+
+/* ----------------- Posts ----------------- */
+
+
+.curb-post-infos {
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+  padding: .5rem !important;
+  margin-bottom: .5rem !important;
+  width: 92%;
+}
+
+.curb-post {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.curb-post img {
+  width: 100%;
+}
+
+.curb-post::after {
+  display: block;
+  position: relative;
+  background-image: linear-gradient(to bottom, transparent 0%, #000000 100%);
+  margin-top: -100px;
+  height: 100px;
+  width: 100%;
+  content: '';
+}
+
+.curb-post-title {
+  color: #fff;
+  text-shadow: 1px 1px 3px rgb(0, 0, 0);
+  font-weight: bold;
+
+}
+
+.curb-post-title-1 {
+  font-size: 1.5rem;
+
+}
+
+.curb-post-title-2 {
+  font-size: 1.25rem;
+
+}
+
+.curb-post-title-3 {
+  font-size: 1rem;
+
+}
+
+.curb-post-title-4 {
+  font-size: 0.6rem;
+
+}
+
+
+
+
+
+/* ----------------- Reviews ----------------- */
+
+.curb-review-stars {
+  color: gold;
+}
+
+/* ----------------- Calendar ----------------- */
+
+.curb-calendar{
+  border: 1px solid #999;
+  border-radius: 10px;
+}
+
+/* ----------------- Footer ----------------- */
+
+.curb-footer h4 {
+  color: #fff;
+  font-weight: bold;
+}
+
+.curb-footer li {
+  list-style: none;
+}
+
+.curb-footer {
+  background: #333;
+  color: #fff;
+}
+
+.curb-footer-infos {
+  color: #fff;
+  background: #10b59d;
+}
+
+

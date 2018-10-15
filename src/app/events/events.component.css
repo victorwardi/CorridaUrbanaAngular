@@ -1,0 +1,48 @@
+.event-list li{
+  color: #000515;
+  background: #f5f5f5;
+  list-style: none;
+  margin: 10px;
+  height: 150px;
+}
+
+.event-list > li > time {
+  display: inline-block;
+  color: #f5f5f5;
+  background-color: #5dbf9a;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.event-list > li:nth-child(even) > time {
+  background-color: #EA8859;
+}
+.event-list > li > time > span {
+  display: none;
+}
+
+.event-list > li > time > .day {
+  display: block;
+  font-size: 56pt;
+  font-weight: 100;
+  line-height: 1;
+}
+.event-list > li time > .month {
+  display: block;
+  font-size: 10pt;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.event-list > li time > .year {
+  display: block;
+  font-size: 24pt;
+  font-weight: 900;
+  line-height: 1;
+}
+
+/*social icons*/
+.event-list > .social{
+
+}
