@@ -10,6 +10,6 @@ import {Event} from './model/event.model';
 export class AppComponent  {
   title = 'Corrida Urbana Angular';
 
-  activePage = 'post';
+  activePage = 'calendar';
 
 }

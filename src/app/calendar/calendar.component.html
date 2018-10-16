@@ -1,3 +1,52 @@
-<p>
-  calendar works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+
+      <div class="row curb-calendar">
+        <h4 class="curb-block-title m-3 w-100">Calendar</h4>
+
+        <div class="col-4  " *ngFor="let e of events">
+
+          <div class="row m-1 p-2 curb-calendar-event" >
+
+            <div class="col-3 col-md-12 col-lg-2 curb-event-date">
+              <div class="row">
+                <div class="col text-center m-0 p-0 curb-event-month">{{e.month}}</div>
+              </div>
+              <div class="row">
+                <div class="col text-center m-0 p-0 curb-event-day">{{e.day}}</div>
+              </div>
+            </div>
+
+            <div class="col-9 col-md-12 col-lg-10 curb-event-infos">
+              <div class="row">
+                <div class="col curb-event-title ">{{e.title}}</div>
+              </div>
+              <div class="row">
+                <div class="col curb-event-place"><i class="fas fa-globe-americas"></i> {{e.place}}</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+
+    <!--sidebar-->
+    <!--<div class="col-md-4">-->
+      <!--<app-ads [title]="'Publicidade'" [banner]="'rectangle'"></app-ads>-->
+      <!--<app-ads [banner]="'rectangle'"></app-ads>-->
+      <!--<app-ads [banner]="'rectangle'"></app-ads>-->
+    <!--</div>-->
+  </div>
+
+</div>
+
+

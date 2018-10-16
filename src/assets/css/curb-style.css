@@ -92,6 +92,13 @@ body{
   /*border-radius: 10px;*/
 }
 
+.curb-calendar-event{
+  border-right: 1px solid #e4f5f2;
+  border-bottom: 1px solid #e4f5f2;
+  background-color: #e4f5f2;
+
+}
+
 .curb-event {
 
   border-bottom: 1px solid #cccccc;
