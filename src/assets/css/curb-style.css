@@ -10,11 +10,12 @@
   position: absolute;
   z-index: 1;
   padding: .5rem !important;
-  margin-bottom: .5rem !important;
-  width: 92%;
+  margin-bottom: .5rem;
+
 }
 
 .curb-post {
+  position: relative;
   margin-left: auto !important;
   margin-right: auto !important;
   margin-top: 0.5rem;
@@ -39,32 +40,24 @@
   color: #fff;
   text-shadow: 1px 1px 3px rgb(0, 0, 0);
   font-weight: bold;
-
-}
-
-.curb-post-title-1 {
-  font-size: 1.5rem;
-
-}
-
-.curb-post-title-2 {
   font-size: 1.25rem;
 
 }
-
-.curb-post-title-3 {
-  font-size: 1rem;
-
+ /*For Desktops*/
+@media only screen and (min-width: 768px) {
+  .curb-post-title-1 {
+    font-size: 1.5rem;
+  }
+  .curb-post-title-2 {
+    font-size: 1.25rem;
+  }
+  .curb-post-title-3 {
+    font-size: 1rem;
+  }
+  .curb-post-title-4 {
+    font-size: 0.6rem;
+  }
 }
-
-.curb-post-title-4 {
-  font-size: 0.6rem;
-
-}
-
-
-
-
 
 /* ----------------- Reviews ----------------- */
 

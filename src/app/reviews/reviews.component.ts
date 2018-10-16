@@ -6,11 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reviews.component.css']
 })
 export class ReviewsComponent implements OnInit {
-  reviews = Array(5);
-
+  reviews: number[];
   constructor() { }
 
   ngOnInit() {
+
+    this.reviews = Array(4);
   }
 
 }
