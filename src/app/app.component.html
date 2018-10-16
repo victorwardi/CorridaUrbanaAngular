@@ -1,6 +1,8 @@
 <app-header></app-header>
 <app-navbar></app-navbar>
-<app-main></app-main>
+<app-home *ngIf="activePage === 'home'"></app-home>
+<app-post *ngIf="activePage === 'post'"></app-post>
+<app-calendar *ngIf="activePage === 'calendar'"></app-calendar>
 <app-footer></app-footer>
 
 

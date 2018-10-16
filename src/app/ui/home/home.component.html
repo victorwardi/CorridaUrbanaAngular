@@ -5,11 +5,11 @@
     <section class="col-md-6">
       <app-ads [banner]="'flex'" [showOnlyDesktop]="true" ></app-ads>
       <!-- Featured Post -->
-      <app-post [qtd]="1"></app-post>
+      <app-post-widget [qtd]="1"></app-post-widget>
       <!-- Post 2 Columns -->
-      <app-post [qtd]="2" [title]="'News'"></app-post>
-      <app-post [qtd]="2"></app-post>
-      <app-ads [banner]="'flex'"></app-ads>
+      <app-post-widget [qtd]="2" [title]="'News'"></app-post-widget>
+      <app-post-widget [qtd]="2"></app-post-widget>
+
     </section>
     <!-- Reviews List -->
     <section class="col-md-3">
@@ -26,11 +26,11 @@
 
   <div class="row">
     <section class="col-md-12">
-      <app-post [qtd]="3" [title]="'Releases'"></app-post>
+      <app-post-widget [qtd]="3" [title]="'Releases'"></app-post-widget>
       <app-ads [banner]="'flex'"></app-ads>
       <!-- Post 4 Columns -->
-      <app-post [qtd]="4"></app-post>
-      <app-post [qtd]="4"></app-post>
+      <app-post-widget [qtd]="4"></app-post-widget>
+      <app-post-widget [qtd]="4"></app-post-widget>
 
     </section>
   </div>

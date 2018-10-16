@@ -11,6 +11,9 @@ export class AdsComponent implements OnInit {
   banner = '';
 
   @Input()
+  title = '';
+
+  @Input()
   showOnlyDesktop = false;
 
   constructor() {
