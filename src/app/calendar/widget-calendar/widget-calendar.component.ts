@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-events-home-list',
-  templateUrl: './events-home-list.component.html',
-  styleUrls: ['./events-home-list.component.css']
+  selector: 'app-widget-calendar',
+  templateUrl: './widget-calendar.component.html',
+  styleUrls: ['./widget-calendar.component.css']
 })
-export class EventsHomeListComponent implements OnInit {
+export class WidgetCalendarComponent implements OnInit {
 
-  events = Array(5);
+  events;
 
   constructor() { }
 
@@ -25,3 +25,4 @@ export class EventsHomeListComponent implements OnInit {
   }
 
 }
+

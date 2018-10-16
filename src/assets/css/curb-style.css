@@ -1,9 +1,25 @@
-.curb-ad-header {
-  margin: 10px;
+body{
+  color: #343a40!important;
+}
+
+.curb-block-title {
+
+  line-height: 1.2;
+  border-bottom: 1px solid #ccc;
+  text-transform: uppercase;
+}
+
+.curb-block-title:after {
+  content: "";
+  width: 60px;
+  height: 5px;
+  display: block;
+  margin-bottom: -.0625rem;
+  margin-top: .75rem;
+  background-color: #5dbf9a;
 }
 
 /* ----------------- Posts ----------------- */
-
 
 .curb-post-infos {
   bottom: 0;
@@ -43,17 +59,21 @@
   font-size: 1.25rem;
 
 }
- /*For Desktops*/
+
+/*For Desktops*/
 @media only screen and (min-width: 768px) {
   .curb-post-title-1 {
     font-size: 1.5rem;
   }
+
   .curb-post-title-2 {
     font-size: 1.25rem;
   }
+
   .curb-post-title-3 {
     font-size: 1rem;
   }
+
   .curb-post-title-4 {
     font-size: 0.6rem;
   }
@@ -67,10 +87,41 @@
 
 /* ----------------- Calendar ----------------- */
 
-.curb-calendar{
-  border: 1px solid #999;
-  border-radius: 10px;
+.curb-calendar {
+  /*border: 1px solid #999;*/
+  /*border-radius: 10px;*/
 }
+
+.curb-event {
+
+  border-bottom: 1px solid #cccccc;
+}
+
+.curb-event:last-child {
+  border: 0;
+}
+
+.curb-event-date {
+  border: 1px solid #666666;
+  border-radius: 5px;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.curb-event-month {
+  background-color: #5dbf9a;
+  color: #f3f3f3;
+}
+
+.curb-event-day {
+
+}
+
+.curb-event-title{
+  font-weight: bold;
+}
+.curb-event-place{}
+
 
 /* ----------------- Footer ----------------- */
 

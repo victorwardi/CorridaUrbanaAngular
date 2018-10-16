@@ -9,6 +9,8 @@ export class PostComponent implements OnInit, AfterViewInit {
 
   @Input()
   qtd: number;
+  @Input()
+  title =  '';
   posts: number[];
 
   constructor(private renderer: Renderer2, private  element: ElementRef) {
@@ -16,6 +18,7 @@ export class PostComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.posts = Array(this.qtd);
+
   }
 
   ngAfterViewInit(): void {

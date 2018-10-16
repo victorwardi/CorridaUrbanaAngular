@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-reviews',
@@ -6,12 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reviews.component.css']
 })
 export class ReviewsComponent implements OnInit {
+
+  @Input()
+  qtd = 0;
+
   reviews: number[];
   constructor() { }
 
   ngOnInit() {
 
-    this.reviews = Array(4);
+    this.reviews = Array(this.qtd);
   }
 
 }

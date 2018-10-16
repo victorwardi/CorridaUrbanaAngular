@@ -1,5 +1,7 @@
+
 <div class="row">
-  <div class="col-md" *ngFor="let p of posts">
+  <h4 *ngIf="title != ''" class="curb-block-title m-3 w-100">{{title}}</h4>
+  <div class="col col-sm col-md" *ngFor="let p of posts">
     <div class="curb-post">
       <div class="curb-post-infos">
         <div class="curb-post-title" #curbPostTitle>My first Featured Post of that world!</div>

@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Event} from '../model/event.model';
+import {Event} from '../../model/event.model';
 import {reject} from 'q';
-import {Address} from '../model/address.model';
-import {EventDate} from '../model/event-date.model';
+import {Address} from '../../model/address.model';
+import {EventDate} from '../../model/event-date.model';
 
 
 @Injectable({
