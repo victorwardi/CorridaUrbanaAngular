@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Event} from '../model/event.model';
+import {EventService} from './events/event.service';
 
 @Component({
   selector: 'app-calendar',
@@ -7,21 +9,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalendarComponent implements OnInit {
 
-  events;
 
-  constructor() { }
+  eventListOriginal: Event[] = [];
+  eventList: Event[] = [];
+  loaded = false;
+  @ViewChild('inputSearch')
+  searchInputRef: ElementRef;
 
-  ngOnInit() {
+  constructor(private eventService: EventService) {
+  }
 
-    this.events = [
-      { day: '10', month: 'set', title: 'Corrida das Estações Verão', place : 'Rio de Janeiro - RJ' },
-      { day: '12', month: 'out', title: 'Corrida Social', place : 'Niterói - RJ' },
-      { day: '14', month: 'out', title: 'WTR Videiras', place : 'Niterói - RJ' },
-      { day: '21', month: 'out', title: 'Wrun', place : 'Niterói - RJ' },
-      { day: '21', month: 'out', title: 'Marathon Race', place : 'Niterói - RJ' },
-      { day: '28', month: 'out', title: 'Venus Run', place : 'São Paulo - SP' },
-      { day: '18', month: 'out', title: 'Corrida Social', place : 'Niterói - RJ' },
-    ];
+  ngOnInit(): void {
+    this.searchEvents('rj');
+  }
+
+  searchEvents(uf: string) {
+    this.eventService.getEventsByUf(uf).then(() => {
+        this.loaded = true;
+        this.eventListOriginal = this.eventService.results;
+        this.eventList = this.eventListOriginal;
+        console.log('%cEvent service returned: ' + this.eventListOriginal.length + ' events.', 'color: blue');
+      }
+    );
+
+  }
+
+  filterEvents() {
+    this.loaded = false;
+    console.log('searching events with name: ' + this.searchInputRef.nativeElement.value);
+    this.eventList = this.eventListOriginal.filter(
+      c => c.title.toLowerCase().includes(this.searchInputRef.nativeElement.value.toLowerCase())
+    );
+    this.loaded = true;
+    console.log('%cYour search returned: ' + this.eventList.length + ' events.', 'color: red');
+
+  }
+
+  filterState(uf: string) {
+    this.loaded = false;
+    this.searchEvents(uf.valueOf());
   }
 
 }

@@ -12,4 +12,8 @@ export class AppComponent  {
 
   activePage = 'calendar';
 
+  onNavigate(feature: string) {
+    this.activePage = feature;
+  }
+
 }

@@ -1,52 +1,92 @@
 <div class="container">
   <div class="row">
     <div class="col">
+      <h4 class="curb-block-title my-3 w-100">Calendar</h4>
+      <div class="row">
+
+        <div class="col-4 mb-4">
+          <input type="text" class="form-control" placeholder="search..." #inputSearch>
+        </div>
 
 
-      <div class="row curb-calendar">
-        <h4 class="curb-block-title m-3 w-100">Calendar</h4>
+        <div class="col text-left">
+          <button class="btn btn-success ml-2" (click)="filterEvents()">Search</button>
+        </div>
 
-        <div class="col-4  " *ngFor="let e of events">
-
-          <div class="row m-1 p-2 curb-calendar-event" >
-
-            <div class="col-3 col-md-12 col-lg-2 curb-event-date">
-              <div class="row">
-                <div class="col text-center m-0 p-0 curb-event-month">{{e.month}}</div>
-              </div>
-              <div class="row">
-                <div class="col text-center m-0 p-0 curb-event-day">{{e.day}}</div>
-              </div>
-            </div>
-
-            <div class="col-9 col-md-12 col-lg-10 curb-event-infos">
-              <div class="row">
-                <div class="col curb-event-title ">{{e.title}}</div>
-              </div>
-              <div class="row">
-                <div class="col curb-event-place"><i class="fas fa-globe-americas"></i> {{e.place}}</div>
-              </div>
-
-            </div>
-          </div>
-
+        <div class="form-group col-md-4">
+          <select id="inputState" class="form-control" (change)="filterState($event.target.value);">
+            <option selected>Choose State...</option>
+            <option>RJ</option>
+            <option>SP</option>
+            <option>MG</option>
+            <option>DF</option>
+          </select>
         </div>
 
       </div>
+      <div  *ngIf="!loaded" class="loader mx-auto my-5"></div>
+      <div class="row curb-calendar" *ngIf="loaded">
+        <div class="col-4" *ngFor="let e of eventList">
+          <div class="row">
+            <div class="col m-1 curb-event">
+              <div class="row p-3">
+                <!--COL Title - Place - Distances-->
+                <div class="col-9 col-md-12 col-lg-9 p-0 curb-event-infos">
+                  <!--Title-->
+                  <div class="row">
+                    <div class="col curb-event-title">{{e.title}}</div>
+                  </div>
+                  <!--Place-->
+                  <div class="row">
+                    <div class="col curb-event-place"><i class="fas fa-globe-americas"></i> {{e.address.place}}</div>
+                  </div>
+                </div><!--Title - Place-->
+                <!--COL Date-->
+                <div class="col-3 col-md-12 col-lg-3 pl-0 curb-event-date">
+                  <div class="row">
+                    <div class="col text-right m-0 p-0">
+                      <span class="curb-event-day">{{e.date.day}}</span>
+                      <span class="curb-event-month"> {{e.date.month}}</span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col text-right m-0 p-0 curb-event-year">{{e.date.year}}</div>
+                  </div>
+                </div><!--COL Date-->
+              </div>
+
+              <!--Distances-->
+              <div class="row curb-event-distances ">
+                <div class="col mt-1">
+                  <div class="curb-event-distance float-left text-center m-1">
+                    <div class="curb-event-distance-text curb-distance-5k">5k</div>
+                  </div>
+                  <div class="curb-event-distance float-left text-center m-1">
+                    <div class="curb-event-distance-text curb-distance-10k">10k</div>
+                  </div>
+                </div>
+              </div><!--Distances-->
 
 
-
+              <!--Share Infos -->
+              <div class="row curb-event-share-link p-2 m-1 mt-2">
+                <div class="col-8 curb-event-share pl-0">
+                  <i class="fab fa-facebook m-1"></i>
+                  <i class="fab fa-whatsapp m-1"></i>
+                  <i class="far fa-envelope m-1"></i>
+                </div>
+                <div class="col-4 text-right pr-0">
+                  <a class="curb-event-link p-1 px-2">
+                    <i class="fas fa-info-circle"></i> Infos
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-
-    <!--sidebar-->
-    <!--<div class="col-md-4">-->
-      <!--<app-ads [title]="'Publicidade'" [banner]="'rectangle'"></app-ads>-->
-      <!--<app-ads [banner]="'rectangle'"></app-ads>-->
-      <!--<app-ads [banner]="'rectangle'"></app-ads>-->
-    <!--</div>-->
   </div>
-
 </div>
 
 
