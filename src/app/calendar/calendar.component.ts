@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {Event} from '../model/event.model';
 import {EventService} from './events/event.service';
 
@@ -16,7 +16,9 @@ export class CalendarComponent implements OnInit {
   @ViewChild('inputSearch')
   searchInputRef: ElementRef;
 
-  constructor(private eventService: EventService) {
+  distancesSelected = [];
+
+  constructor(private eventService: EventService, private renderer: Renderer2) {
   }
 
   ngOnInit(): void {
@@ -47,7 +49,35 @@ export class CalendarComponent implements OnInit {
 
   filterState(uf: string) {
     this.loaded = false;
+    //reset distance filter
+    this.renderer.removeClass(document.querySelector('.curb-filter-distance'), 'curb-filter-distance-selected');
     this.searchEvents(uf.valueOf());
+  }
+
+
+  filterDistance(distance: string, event: any) {
+    this.loaded = false;
+    this.toggleDistance(distance, event);
+
+    if (this.distancesSelected.length === 0) {
+      this.eventList = this.eventListOriginal;
+    } else {
+      this.eventList = this.eventListOriginal.filter(
+        c => c.distances.includes(distance)
+      );
+    }
+    this.loaded = true;
+  }
+
+  toggleDistance(distance: string, event: any) {
+    if (this.distancesSelected.includes(distance)) {
+      this.renderer.removeClass(event.target.parentElement, 'curb-filter-distance-selected');
+
+      this.distancesSelected.splice(this.distancesSelected.indexOf(distance), 1);
+    } else {
+      this.renderer.addClass(event.target.parentElement, 'curb-filter-distance-selected');
+      this.distancesSelected.push(distance);
+    }
   }
 
 }

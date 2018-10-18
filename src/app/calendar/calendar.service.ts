@@ -20,7 +20,6 @@ export class CalendarService { results: Event[];
     return this.http.get<Event[]>('https://www.corridaurbana.com.br/wp-json/calendario/estado/' + uf).toPromise().then(
       response => { // Success
         this.results = response['corridas'].map(corrida => {
-
           return new Event(
             corrida.id,
             corrida.titulo,

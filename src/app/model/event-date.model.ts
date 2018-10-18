@@ -4,17 +4,17 @@ export class EventDate {
   day: string;
   month: string;
   year: string;
-  monthComplete: string;
+  monthName: string;
   fullDate: string;
   hour: string;
 
 
-  constructor(date: Date, day: string, month: string, year: string, monthComplete: string, fullDate: string, hour: string) {
+  constructor(date: Date, day: string, month: string, year: string, monthName: string, fullDate: string, hour: string) {
     this.date = date;
     this.day = day;
     this.month = month;
     this.year = year;
-    this.monthComplete = monthComplete;
+    this.monthName = monthName;
     this.fullDate = fullDate;
     this.hour = hour;
   }

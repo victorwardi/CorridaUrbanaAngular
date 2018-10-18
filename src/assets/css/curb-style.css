@@ -153,22 +153,22 @@ body {
 
 }
 
-.curb-calendar .curb-event-distance .curb-distance-5k {
+.curb-distance-5K {
   background-color: #3498db;
   border-radius: 50%;
 }
 
-.curb-calendar .curb-event-distance .curb-distance-10k {
+.curb-distance-10K {
   background-color: #10b59d;
   border-radius: 50%;
 }
 
-.curb-calendar .curb-event-distance .curb-distance-21k {
+.curb-distance-21K {
   background-color: #eebf00;
   border-radius: 50%;
 }
 
-.curb-calendar .curb-event-distance .curb-distance-42k {
+.curb-distance-42K {
   background-color: #ff5f25;
   border-radius: 50%;
 }
@@ -205,6 +205,61 @@ body {
   cursor: pointer;
 
 }
+
+
+/* ----------------- Calendar Filters ----------------- */
+
+.curb-filter-distance{
+
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #b4a9a4;
+  color: #ffffff;
+}
+
+.curb-filter-distance-text {
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-top: 50%;
+  padding-bottom: 50%;
+  font-weight: bold;
+  line-height: 0;
+  text-align: center;
+  background-color: #b4a9a4;
+}
+
+
+
+.curb-filter-distance:hover{
+  cursor: pointer;
+}
+/*.curb-filter-distance .curb-distance-5K:hover,*/
+.curb-filter-distance-selected .curb-distance-5K {
+  background-color: #3498db;
+
+
+}
+
+/*.curb-filter-distance .curb-distance-10K:hover,*/
+.curb-filter-distance-selected .curb-distance-10K{
+  background-color: #10b59d;
+
+}
+
+/*.curb-filter-distance .curb-distance-21K:hover,*/
+.curb-filter-distance-selected .curb-distance-21K {
+  background-color: #eebf00;
+
+}
+
+/*.curb-filter-distance .curb-distance-42K:hover,*/
+.curb-filter-distance-selected .curb-distance-42K {
+  background-color: #ff5f25;
+
+}
+
+
 
 /* ----------------- Footer ----------------- */
 

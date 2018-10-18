@@ -2,12 +2,11 @@
   <div class="row">
     <div class="col">
       <h4 class="curb-block-title my-3 w-100">Calendar</h4>
+      <!-- Filters -->
       <div class="row">
-
         <div class="col-4 mb-4">
           <input type="text" class="form-control" placeholder="search..." #inputSearch>
         </div>
-
 
         <div class="col text-left">
           <button class="btn btn-success ml-2" (click)="filterEvents()">Search</button>
@@ -22,9 +21,29 @@
             <option>DF</option>
           </select>
         </div>
-
       </div>
-      <div  *ngIf="!loaded" class="loader mx-auto my-5"></div>
+
+      <div class="row">
+        <div class="col">
+          <div class="row">
+              <div class="curb-filter-distance float-left text-center m-1" (click)="filterDistance('5K', $event)">
+                <div class="curb-filter-distance-text curb-distance-5K" >5K</div>
+              </div>
+              <div class="curb-filter-distance float-left text-center m-1" (click)="filterDistance('10K', $event)">
+                <div class="curb-filter-distance-text curb-distance-10K">10K</div>
+              </div>
+              <div class="curb-filter-distance float-left text-center m-1" (click)="filterDistance('21K', $event)">
+                <div class="curb-filter-distance-text curb-distance-21K">21K</div>
+              </div>
+              <div class="curb-filter-distance float-left text-center m-1" (click)="filterDistance('42K', $event)">
+                <div class="curb-filter-distance-text curb-distance-42K">42K</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Loader -->
+      <div *ngIf="!loaded" class="loader mx-auto my-5"></div>
+      <!-- Calendar -->
       <div class="row curb-calendar" *ngIf="loaded">
         <div class="col-4" *ngFor="let e of eventList">
           <div class="row">
@@ -46,23 +65,20 @@
                   <div class="row">
                     <div class="col text-right m-0 p-0">
                       <span class="curb-event-day">{{e.date.day}}</span>
-                      <span class="curb-event-month"> {{e.date.month}}</span>
+                      <span class="curb-event-month"> {{e.date.monthName.substring(0, 3)}}</span>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col text-right m-0 p-0 curb-event-year">{{e.date.year}}</div>
+                    <div class="col text-right m-0 p-0 curb-event-year">20{{e.date.year}}</div>
                   </div>
                 </div><!--COL Date-->
               </div>
 
               <!--Distances-->
-              <div class="row curb-event-distances ">
+              <div class="row">
                 <div class="col mt-1">
-                  <div class="curb-event-distance float-left text-center m-1">
-                    <div class="curb-event-distance-text curb-distance-5k">5k</div>
-                  </div>
-                  <div class="curb-event-distance float-left text-center m-1">
-                    <div class="curb-event-distance-text curb-distance-10k">10k</div>
+                  <div *ngFor="let distance of e.distances" class="curb-event-distance float-left text-center m-1">
+                    <div class="curb-event-distance-text curb-distance-{{distance}}">{{distance}}</div>
                   </div>
                 </div>
               </div><!--Distances-->
