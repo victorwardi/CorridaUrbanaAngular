@@ -1,0 +1,39 @@
+<!-- Content -->
+<main class="container">
+  <div class="row ">
+    <!-- Main Content -->
+    <section class="col-md-6">
+      <app-ads [banner]="'flex'" [showOnlyDesktop]="true" ></app-ads>
+      <!-- Featured Post -->
+      <app-post-widget [qtd]="1"></app-post-widget>
+      <!-- Post 2 Columns -->
+      <app-post-widget [qtd]="2" [title]="'News'"></app-post-widget>
+      <app-post-widget [qtd]="2"></app-post-widget>
+      <app-post-widget [qtd]="3"></app-post-widget>
+
+    </section>
+    <!-- Reviews List -->
+    <section class="col-md-3">
+      <app-reviews [qtd]="4"></app-reviews>
+    </section>
+    <!-- Events List-->
+    <section class="col-md-3">
+      <app-widget-calendar></app-widget-calendar>
+      <app-ads [banner]="'rectangle'"></app-ads>
+
+
+    </section>
+  </div>
+
+  <div class="row">
+    <section class="col-md-12">
+      <app-post-widget [qtd]="3" [title]="'Releases'"></app-post-widget>
+      <app-ads [banner]="'flex'"></app-ads>
+      <!-- Post 4 Columns -->
+      <app-post-widget [qtd]="4"></app-post-widget>
+      <app-post-widget [qtd]="4"></app-post-widget>
+
+    </section>
+  </div>
+</main>
+

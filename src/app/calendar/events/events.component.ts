@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {Event} from '../model/event.model';
+import {Event} from '../../model/event.model';
 import {EventService} from './event.service';
 
 

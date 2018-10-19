@@ -1,5 +1,5 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
-import {EventService} from './events/event.service';
+import {EventService} from './calendar/events/event.service';
 import {Event} from './model/event.model';
 
 @Component({
@@ -9,4 +9,11 @@ import {Event} from './model/event.model';
 })
 export class AppComponent  {
   title = 'Corrida Urbana Angular';
+
+  activePage = 'calendar';
+
+  onNavigate(feature: string) {
+    this.activePage = feature;
+  }
+
 }

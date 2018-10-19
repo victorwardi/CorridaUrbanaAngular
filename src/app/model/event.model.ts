@@ -7,13 +7,16 @@ export class Event {
   link: string;
   date: EventDate;
   address: Address;
-  distances: string;
+  distances: string[];
   siteSubscription: string;
   price: string;
   image: string;
 
 
-  constructor(id: number, title: string, link: string, date: EventDate, address: Address, distances: string, siteSubscription: string, price: string, image: string) {
+  constructor(id: number, title: string, link: string, date: EventDate,
+              address: Address, distances: string[],
+              siteSubscription: string,
+              price: string, image: string) {
     this.id = id;
     this.title = title;
     this.link = link;

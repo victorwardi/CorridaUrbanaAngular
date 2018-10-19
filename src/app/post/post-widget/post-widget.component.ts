@@ -1,14 +1,16 @@
 import {AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2} from '@angular/core';
 
 @Component({
-  selector: 'app-post',
-  templateUrl: './post.component.html',
-  styleUrls: ['./post.component.css']
+  selector: 'app-post-widget',
+  templateUrl: './post-widget.component.html',
+  styleUrls: ['./post-widget.component.css']
 })
-export class PostComponent implements OnInit, AfterViewInit {
+export class PostWidgetComponent implements OnInit, AfterViewInit {
 
   @Input()
   qtd: number;
+  @Input()
+  title =  '';
   posts: number[];
 
   constructor(private renderer: Renderer2, private  element: ElementRef) {
@@ -16,6 +18,7 @@ export class PostComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.posts = Array(this.qtd);
+
   }
 
   ngAfterViewInit(): void {
