@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container curb-content-height" >
   <div class="row">
-    <div class="col">
+    <div class="col" >
       <h4 class="curb-block-title my-3 w-100">Calendar</h4>
       <!-- Filters -->
-      <div class="row">
+      <div class="row" *ngIf="loaded">
         <div class="col-4 mb-4">
           <input type="text" class="form-control" placeholder="search..." #inputSearch>
         </div>
@@ -23,7 +23,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row" *ngIf="loaded">
         <div class="col">
           <div class="row">
               <div class="curb-filter-distance float-left text-center m-1" (click)="filterDistance('5K', $event)">

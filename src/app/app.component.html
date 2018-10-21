@@ -1,8 +1,6 @@
 <app-header></app-header>
 <app-navbar (pageSelected)="onNavigate($event)"></app-navbar>
-<app-home *ngIf="activePage === 'home'"></app-home>
-<app-post *ngIf="activePage === 'post'"></app-post>
-<app-calendar *ngIf="activePage === 'calendar'"></app-calendar>
+<router-outlet></router-outlet>
 <app-footer></app-footer>
 
 

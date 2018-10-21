@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {RouterModule, Routes} from "@angular/router";
 
 import { AppComponent } from './app.component';
 import { EventsComponent } from './calendar/events/events.component';
@@ -14,7 +15,14 @@ import { WidgetCalendarComponent } from './calendar/widget-calendar/widget-calen
 import { HomeComponent } from './ui/home/home.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import {PostComponent} from './post/post.component';
+import { PostListComponent } from './post/post-list/post-list.component';
 
+const appRoutes : Routes = [
+  {path : '' , component : HomeComponent},
+  {path : 'calendario' , component : CalendarComponent},
+  {path : 'post' , component : PostListComponent},
+
+];
 
 @NgModule({
   declarations: [
@@ -30,10 +38,12 @@ import {PostComponent} from './post/post.component';
     WidgetCalendarComponent,
     HomeComponent,
     CalendarComponent,
+    PostListComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

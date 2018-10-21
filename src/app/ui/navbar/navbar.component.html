@@ -4,7 +4,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">Expand at lg</a>
+      <!--<a class="navbar-brand" routerLink="/"><i class="fas fa-home"></i></a>-->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
               aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -12,14 +12,14 @@
 
       <div class="collapse navbar-collapse" id="navbarsExample05">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link " href="#" (click)="onSelect('home')">Home <span class="sr-only">(current)</span></a>
+           <li class="nav-item">
+             <a class="nav-link"  routerLinkActive="active" routerLink="" [routerLinkActiveOptions]="{exact : true}"><i class="fas fa-home"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" (click)="onSelect('post')">Post</a>
+            <a class="nav-link"  routerLinkActive="active" routerLink="post" >Post</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" (click)="onSelect('calendar')">Calendar</a>
+            <a class="nav-link"  routerLinkActive="active" routerLink="calendario" >Calendar</a>
           </li>
           <!--<li class="nav-item dropdown">-->
             <!--<a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown05" data-toggle="dropdown"-->

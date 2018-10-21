@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Event} from '../model/event.model';
 import {EventDate} from '../model/event-date.model';
@@ -13,7 +12,6 @@ export class CalendarService { results: Event[];
   constructor(private http: HttpClient) {
     this.results = [];
   }
-
 
 
   getEventsByUf(uf: string) {

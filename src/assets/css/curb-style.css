@@ -19,6 +19,10 @@ body {
   background-color: #5dbf9a;
 }
 
+.curb-content-height{
+  min-height: 500px;
+}
+
 /* ----------------- Posts ----------------- */
 
 .curb-post-infos {

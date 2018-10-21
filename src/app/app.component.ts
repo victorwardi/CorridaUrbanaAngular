@@ -10,7 +10,7 @@ import {Event} from './model/event.model';
 export class AppComponent  {
   title = 'Corrida Urbana Angular';
 
-  activePage = 'calendar';
+  activePage = 'home';
 
   onNavigate(feature: string) {
     this.activePage = feature;
