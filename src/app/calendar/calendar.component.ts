@@ -1,6 +1,7 @@
 import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {Event} from '../model/event.model';
 import {EventService} from './events/event.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-calendar',
@@ -18,11 +19,16 @@ export class CalendarComponent implements OnInit {
 
   distancesSelected = [];
 
-  constructor(private eventService: EventService, private renderer: Renderer2) {
+  constructor(private eventService: EventService, private renderer: Renderer2, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
+console.log(this.route.snapshot.params['uf'] );
+    if (this.route.snapshot.params['uf'] == null ) {
     this.searchEvents('rj');
+    } else {
+      this.searchEvents(this.route.snapshot.params['uf']);
+    }
   }
 
   searchEvents(uf: string) {

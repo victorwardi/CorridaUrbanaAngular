@@ -9,7 +9,7 @@ export class Post {
   title: string;
   content: string;
   featuredImage: Media;
-  author : Author;
+  author: Author;
 
 
   constructor(id: number, date: Date, slug: string, title: string, content: string, featuredImage: Media, author: Author) {
@@ -21,8 +21,6 @@ export class Post {
     this.featuredImage = featuredImage;
     this.author = author;
   }
-
-  constructor(){}
 
 
 }
