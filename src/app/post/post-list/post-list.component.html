@@ -8,7 +8,7 @@
 <div *ngFor="let post of posts" >
   <a routerLink="/post/{{post.id}}" >
       <h3 class="my-4 curb-post-single-title">{{post.title}}</h3>
-      <!--<p class="my-4 curb-post-single-title">{{post.author.name}}</p>-->
+      <p class="my-4 curb-post-single-title">{{post.author.name}}</p>
       <div class="curb-post-single-image"><img src="{{post.featuredImage.post}}" height="200px" alt=""></div>
   </a>
 </div>

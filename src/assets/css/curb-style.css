@@ -83,6 +83,14 @@ body {
   }
 }
 
+/* ----------------- Post Single ----------------- */
+
+.curb-post-single img {
+  max-width: 100%;
+  height: auto;
+}
+
+
 /* ----------------- Reviews ----------------- */
 
 .curb-review-stars {

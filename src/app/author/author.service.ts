@@ -19,4 +19,9 @@ export class AuthorService {
     return new Author(id, author.name, author.avatar_urls['96']);
   }
 
+  getAuthor(author: any): Author {
+    return new Author(author.id, author.name, author.avatar_urls['96']);
+  }
+
+
 }

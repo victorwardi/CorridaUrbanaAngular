@@ -4,7 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {AppComponent} from './app.component';
 import {EventsComponent} from './calendar/events/events.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HeaderComponent} from './ui/header/header.component';
 import {FooterComponent} from './ui/footer/footer.component';
 import {NavbarComponent} from './ui/navbar/navbar.component';
@@ -16,13 +16,15 @@ import {HomeComponent} from './ui/home/home.component';
 import {CalendarComponent} from './calendar/calendar.component';
 import {PostComponent} from './post/post.component';
 import {PostListComponent} from './post/post-list/post-list.component';
+import {CacheRegistrationService} from './cache/cache-registration.service';
+import {UriCachingInterceptor} from './cache/cache.service';
 
 const appRoutes: Routes = [
-  {path : '' , component : HomeComponent},
-  {path : 'calendario' , component : CalendarComponent},
-  {path : 'calendario/:uf' , component : CalendarComponent},
-  {path : 'post' , component : PostListComponent},
-  {path : 'post/:id' , component : PostComponent},
+  {path: '', component: HomeComponent},
+  {path: 'calendario', component: CalendarComponent},
+  {path: 'calendario/:uf', component: CalendarComponent},
+  {path: 'post', component: PostListComponent},
+  {path: 'post/:id', component: PostComponent},
 
 ];
 
@@ -47,7 +49,16 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    CacheRegistrationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: UriCachingInterceptor,
+      multi: true
+    }
+],
+bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {
+}

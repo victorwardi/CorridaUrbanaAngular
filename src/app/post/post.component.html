@@ -1,25 +1,29 @@
 <div class="container">
 
-<div class="row">
-  <!--post content-->
-  <!-- Loader -->
-  <div *ngIf="!loaded" class="loader mx-auto my-5"></div>
-  <div *ngIf="loaded"class="col-md-8">
+  <div class="row">
 
-    <h1 class="my-4 curb-post-single-title">{{post.title}}</h1>
-    <!--<h4 class="my-4 curb-post-single-title">{{post.author.name}}</h4>-->
-    <div class="curb-post-single-image"><img src="{{post.featuredImage.post}}" width="700px" alt=""></div>
+    <!--Content-->
+    <div class="col-md-8">
+      <!-- Loader -->
+      <div *ngIf="!loaded" class="loader mx-auto my-5"></div>
+      <!--Post-->
+      <div class="row curb-post-single" *ngIf="loaded">
+        <div class="col">
+          <h1 class="my-4 curb-post-single-title">{{post.title}}</h1>
+          <h4 class="my-4 curb-post-single-title">{{post.author.name}}</h4>
+          <div class="curb-post-single-image"><img src="{{post.featuredImage.post}}" alt=""></div>
+          <div class="curb-post-single-body" [innerHTML]="post.content"></div>
+        </div>
+      </div><!-- End of post -->
+    </div><!-- End of content -->
+    <!--sidebar-->
+    <div class="col-md-4">
 
-    <!--<div class="curb-post-single-body" [innerHTML] = "post.content"></div>-->
+      <!--<app-widget-calendar></app-widget-calendar>-->
+      <app-ads [title]="'Publicidade'" [banner]="'rectangle'"></app-ads>
+      <app-ads [banner]="'rectangle'"></app-ads>
+      <app-ads [banner]="'rectangle'"></app-ads>
+      <!--<app-ads [banner]="'rectangle'"></app-ads>-->
+    </div>
   </div>
-  <!--sidebar-->
-  <div class="col-md-4">
-
-    <!--<app-widget-calendar></app-widget-calendar>-->
-    <!--<app-ads [title]="'Publicidade'" [banner]="'rectangle'"></app-ads>-->
-    <!--<app-ads [banner]="'rectangle'"></app-ads>-->
-    <!--<app-ads [banner]="'rectangle'"></app-ads>-->
-    <!--<app-ads [banner]="'rectangle'"></app-ads>-->
-  </div>
-</div>
 </div>
