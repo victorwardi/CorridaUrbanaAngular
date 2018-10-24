@@ -44,7 +44,14 @@
       <!-- Loader -->
       <div *ngIf="!loaded" class="loader mx-auto my-5"></div>
       <!-- Calendar -->
-      <div class="row curb-calendar" *ngIf="loaded">
+      <div class="row curb-calendar my-4" *ngIf="loaded">
+        <div class="col" *ngIf="eventList.length  == 0">
+
+            <div class="alert alert-warning">
+              <i class="far fa-sad-tear"></i> Nenhuma corrida foi encontrada.
+
+            </div>
+        </div>
         <div class="col-4" *ngFor="let e of eventList">
           <div class="row">
             <div class="col m-1 curb-event">

@@ -8,21 +8,22 @@ import {CacheRegistrationService} from '../cache/cache-registration.service';
 @Injectable({
   providedIn: 'root'
 })
-export class CalendarService { results: Event[];
+export class CalendarService {
 
-  constructor(private http: HttpClient,  private cacheRegistration: CacheRegistrationService) {
-    this.results = [];
+
+  constructor(private http: HttpClient, private cacheRegistration: CacheRegistrationService) {
   }
 
+  async getEventsByUf(uf: string) {
 
-  getEventsByUf(uf: string) {
+    let results: Event[] = [];
 
     const url = 'https://www.corridaurbana.com.br/wp-json/calendario/estado/' + uf;
     this.cacheRegistration.addToCache(url);
 
-    return this.http.get<Event[]>(url).toPromise().then(
+    await this.http.get<any[]>(url).toPromise().then(
       response => { // Success
-        this.results = response['corridas'].map(corrida => {
+        results = response['corridas'].map(corrida => {
           return new Event(
             corrida.id,
             corrida.titulo,
@@ -54,6 +55,8 @@ export class CalendarService { results: Event[];
         });
       }
     );
+
+    return results;
   }
 
 }

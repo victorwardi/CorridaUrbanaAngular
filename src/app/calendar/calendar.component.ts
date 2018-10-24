@@ -1,7 +1,7 @@
 import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {Event} from '../model/event.model';
-import {EventService} from './events/event.service';
 import {ActivatedRoute} from '@angular/router';
+import {CalendarService} from "./calendar.service";
 
 @Component({
   selector: 'app-calendar',
@@ -19,24 +19,24 @@ export class CalendarComponent implements OnInit {
 
   distancesSelected = [];
 
-  constructor(private eventService: EventService, private renderer: Renderer2, private route: ActivatedRoute) {
+  constructor(private calendarService: CalendarService, private renderer: Renderer2, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-console.log(this.route.snapshot.params['uf'] );
-    if (this.route.snapshot.params['uf'] == null ) {
-    this.searchEvents('rj');
+    console.log(this.route.snapshot.params['uf']);
+    if (this.route.snapshot.params['uf'] == null) {
+      this.searchEvents('RJ');
     } else {
       this.searchEvents(this.route.snapshot.params['uf']);
     }
   }
 
   searchEvents(uf: string) {
-    this.eventService.getEventsByUf(uf).then(() => {
+    this.calendarService.getEventsByUf(uf).then( events => {
         this.loaded = true;
-        this.eventListOriginal = this.eventService.results;
+        this.eventListOriginal = events;
         this.eventList = this.eventListOriginal;
-        console.log('%cEvent service returned: ' + this.eventListOriginal.length + ' events.', 'color: blue');
+        console.log('%cEvent service returned: ' + this.eventListOriginal.length + ' events.', 'color: green');
       }
     );
 

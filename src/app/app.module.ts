@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {AppComponent} from './app.component';
-import {EventsComponent} from './calendar/events/events.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HeaderComponent} from './ui/header/header.component';
 import {FooterComponent} from './ui/footer/footer.component';
@@ -31,7 +30,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    EventsComponent,
     HeaderComponent,
     FooterComponent,
     NavbarComponent,

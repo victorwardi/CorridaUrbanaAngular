@@ -5,7 +5,7 @@ export class CacheRegistrationService {
   private services = [];
 
   public addedToCache(serviceUri: string) {
-    console.log(`%c Calling api for ${serviceUri}`, 'color: purple');
+    console.log(`%c Getting cache ${serviceUri}`, 'color: purple');
     return this.services.indexOf(serviceUri) > -1;
   }
 
