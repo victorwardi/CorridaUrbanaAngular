@@ -1,6 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
-import {EventService} from './calendar/events/event.service';
-import {Event} from './model/event.model';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
